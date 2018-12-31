@@ -1,12 +1,12 @@
 sudo: required
 dist: trusty
-cache:
-  - bundler
-matrix:
-  include:
-    - php: 5.6
-      env:
-        - SYMFONY_VERSION='3.4.*'
+#cache:
+ # - bundler
+#matrix:
+ # include:
+  #  - php: 5.6
+   #   env:
+    #    - SYMFONY_VERSION='3.4.*'
 install:
   # Update docker-engine using Ubuntu 'trusty' apt repo
   - >
