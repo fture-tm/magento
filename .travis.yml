@@ -2,6 +2,11 @@ sudo: required
 dist: trusty
 cache:
   - bundler
+matrix:
+  include:
+    - php: 5.6
+      env:
+        - SYMFONY_VERSION='3.4.*'
 #before_script:
 #- bundle exec rake db:create
 #- bundle exec rake db:migrate
@@ -24,9 +29,9 @@ install:
   - docker-compose version
 
 before_script:
- - bundle exec rake db:create
- - bundle exec rake db:migrate
- - bundle exec rake assets:precompile
+# - bundle exec rake db:create
+# - bundle exec rake db:migrate
+# - bundle exec rake assets:precompile
  - docker-compose up --build -d
 
 
