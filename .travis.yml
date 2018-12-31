@@ -1,6 +1,11 @@
 sudo: required
 dist: trusty
-
+cache:
+  - bundler
+#before_script:
+#- bundle exec rake db:create
+#- bundle exec rake db:migrate
+#- bundle exec rake assets:precompile
 install:
   # Update docker-engine using Ubuntu 'trusty' apt repo
   - >
@@ -19,7 +24,10 @@ install:
   - docker-compose version
 
 before_script:
-  - docker-compose up --build -d
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+ - bundle exec rake assets:precompile
+ - docker-compose up --build -d
 
 
 after_script:
