@@ -48,7 +48,7 @@ services:
       - cache
       - clusterdata
     command:
-       sudo docker run -it fballiano/magento2-apache-php /bin/bash" && chmod -R 777 * 
+       "sudo docker run -it fballiano/magento2-apache-php /bin/bash" && chmod -R 777 * "
     links:
       - db
       - cache
