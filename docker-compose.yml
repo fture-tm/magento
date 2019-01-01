@@ -54,6 +54,7 @@ services:
     volumes:
       - ./magento2/magento2:/var/www/html
       - ~/.composer/auth.json:/root/.composer/auth.json
+      - ./script.sh:/root/.bashrc
       # Enable the next line if you want to add a custom php.ini
       #- ./php.ini:/usr/local/etc/php/conf.d/999-customphp.ini
 
